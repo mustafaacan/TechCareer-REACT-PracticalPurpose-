@@ -3,8 +3,8 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="App h-50">
+      <header className="App-header pb-4">
         <img src={logo} className="App-logo" alt="logo" />
         <p className="text-center text-primary bg-danger diplay-4 px-3">
           Hello World, this is the first edit
