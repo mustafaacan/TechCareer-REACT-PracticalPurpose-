@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import ComponentExample from "./components/classComponentExample.jsx";
+import FunctionComponentExample from "./components/functionComponentExample.jsx";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -16,6 +17,15 @@ const componentRoot = ReactDOM.createRoot(document.getElementById("component"));
 componentRoot.render(
   <React.StrictMode>
     <ComponentExample />
+  </React.StrictMode>,
+);
+
+const funccomponentRoot = ReactDOM.createRoot(
+  document.getElementById("funcComponent"),
+);
+funccomponentRoot.render(
+  <React.StrictMode>
+    <FunctionComponentExample />
   </React.StrictMode>,
 );
 
