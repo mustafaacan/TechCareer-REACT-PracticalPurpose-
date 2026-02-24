@@ -1,8 +1,8 @@
 {\rtf1\ansi\ansicpg1254\cocoartf2639
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;\f2\froman\fcharset0 Times-Bold;
 \f3\fmodern\fcharset0 Courier;\f4\fmodern\fcharset0 Courier-Bold;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red109\green109\blue109;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c50196\c50196\c50196;}
+{\colortbl;\red255\green255\blue255;\red25\green60\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c12594\c35385\c100000;\cssrgb\c0\c0\c0;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
 {\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
 {\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
@@ -13,18 +13,29 @@
 
 \f0\fs24 \cf0 \
 
-\fs48 JSX vs JS 
+\fs48 JSX vs JS \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 CRITICAL INFORMATION
 \fs24 \
+\
+For more efficient  HTML codes, use the link below\
+\
+\cb2 https://transform.tools/html-to-jsx
+\fs48 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
 \
 \pard\pardeftab720\partightenfactor0
 
 \f1 \cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 JSX stands for 
+JSX stands for 
 \f2\b JavaScript XML
 \f1\b0 . It is not required by React, but it is a syntactic extension that makes writing UI components significantly more readable.\
 \
 \pard\pardeftab720\sa240\partightenfactor0
-\cf0 \strokec2 core question:\
+\cf0 core question:\
 If we use 
 \f3\fs26 .js
 \f1\fs24  in React, isn\'92t it the same thing?\
@@ -37,40 +48,40 @@ If we use
 \
 \pard\pardeftab720\sa298\partightenfactor0
 
-\f2\b\fs36 \cf0 \strokec2 What Is JSX?\
+\f2\b\fs36 \cf0 What Is JSX?\
 \pard\pardeftab720\sa240\partightenfactor0
 
-\f1\b0\fs24 \cf0 \strokec2 JSX allows you to write HTML-like syntax inside JavaScript:
+\f1\b0\fs24 \cf0 JSX allows you to write HTML-like syntax inside JavaScript:
 \f3\fs26 \
 \pard\pardeftab720\partightenfactor0
-\cf0 \strokec2 const element = <h1>Hello World</h1>;\
+\cf0 const element = <h1>Hello World</h1>;\
 \
 \
 \pard\pardeftab720\sa240\partightenfactor0
 
-\f1\fs24 \cf0 \strokec2 This is 
-\f2\b \strokec2 not valid plain JavaScript
-\f1\b0 \strokec2 . Browsers cannot interpret it directly.\
+\f1\fs24 \cf0 This is 
+\f2\b not valid plain JavaScript
+\f1\b0 . Browsers cannot interpret it directly.\
 A transpiler like Babel converts it into:\
 \pard\pardeftab720\partightenfactor0
-\cf0 \strokec2 const element = React.createElement("h1", null, "Hello World"); \'97> For pure JS\
+\cf0 const element = React.createElement("h1", null, "Hello World"); \'97> For pure JS\
 \
 So JSX is essentially 
 \f2\b syntactic sugar
 \f1\b0  over 
-\f3\fs26 \strokec2 React.createElement()
-\f1\fs24 \strokec2  calls.\
+\f3\fs26 React.createElement()
+\f1\fs24  calls.\
 \
 \
 \pard\pardeftab720\sa240\partightenfactor0
-\cf0 \strokec2 In modern React setups (Vite, Create React App, Next.js), you can write JSX inside 
+\cf0 In modern React setups (Vite, Create React App, Next.js), you can write JSX inside 
 \f3\fs26 .js
 \f1\fs24  files without any issue because the build system is configured to transpile them.\
 For example, this works perfectly in 
 \f3\fs26 App.js
 \f1\fs24 :\
 \pard\pardeftab720\partightenfactor0
-\cf0 \strokec2 function App() \{\
+\cf0 function App() \{\
 return <div>Hello</div>;\
 \}\
 \
@@ -78,41 +89,40 @@ The file extension does not change how JSX works \'97 it is just a convention.\
 \
 \pard\pardeftab720\sa298\partightenfactor0
 
-\f2\b\fs36 \cf0 \strokec2 Why Does 
-\f4\fs39 \strokec2 .jsx
-\f2\fs36 \strokec2  Exist?\
+\f2\b\fs36 \cf0 Why Does 
+\f4\fs39 .jsx
+\f2\fs36  Exist?\
 \pard\pardeftab720\sa240\partightenfactor0
 
-\f1\b0\fs24 \cf0 \strokec2 Primarily for:\
+\f1\b0\fs24 \cf0 Primarily for:\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
-\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Semantic clarity\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Readability in large codebases\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Explicitly signaling that the file contains JSX\
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Semantic clarity\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Readability in large codebases\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Explicitly signaling that the file contains JSX\
 \pard\pardeftab720\sa240\partightenfactor0
-\cf0 \strokec2 It is a convention, not a technical requirement.\
+\cf0 It is a convention, not a technical requirement.\
 \
 \pard\pardeftab720\partightenfactor0
-\cf0 \strokec2 Can You Write React Without JSX?\
+\cf0 Can You Write React Without JSX?\
 \
-\pard\pardeftab720\partightenfactor0
-\cf0 Yes. This is functionally identical to using JSX. \
+Yes. This is functionally identical to using JSX. \
 \
 \pard\pardeftab720\sa240\partightenfactor0
-\cf0 \strokec2 However:\
+\cf0 However:\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
-\ls2\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 It is harder to read\
-\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 It becomes verbose for nested structures\
-\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 It reduces maintainability\
+\ls2\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+It is harder to read\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+It becomes verbose for nested structures\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+It reduces maintainability\
 \pard\pardeftab720\sa240\partightenfactor0
-\cf0 \strokec2 JSX dramatically improves developer ergonomics.\
+\cf0 JSX dramatically improves developer ergonomics.\
 \pard\pardeftab720\partightenfactor0
-\cf0 \strokec2 const element = React.createElement(\
+\cf0 const element = React.createElement(\
 "h1",\
 null,\
 "Hello"\
@@ -120,23 +130,23 @@ null,\
 \
 \pard\pardeftab720\sa298\partightenfactor0
 
-\f2\b\fs36 \cf0 \strokec2 Important Technical Detail\
+\f2\b\fs36 \cf0 Important Technical Detail\
 \pard\pardeftab720\sa240\partightenfactor0
 
-\f1\b0\fs24 \cf0 \strokec2 JSX is:\
+\f1\b0\fs24 \cf0 JSX is:\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
-\ls3\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Not HTML\
-\ls3\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Not a string\
-\ls3\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Not a template literal\
-\ls3\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Not interpreted at runtime\
+\ls3\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Not HTML\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Not a string\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Not a template literal\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Not interpreted at runtime\
 \pard\pardeftab720\sa240\partightenfactor0
-\cf0 \strokec2 It is compiled at build time into JavaScript function calls.\
+\cf0 It is compiled at build time into JavaScript function calls.\
 \pard\pardeftab720\partightenfactor0
-\cf0 \strokec2 For example:\
+\cf0 For example:\
 \
 const x = <div />;\
 \
@@ -144,38 +154,36 @@ This produces a JavaScript object (a React element), not a DOM node.\
 \
 \pard\pardeftab720\sa298\partightenfactor0
 
-\f2\b\fs36 \cf0 \strokec2 Summary\
+\f2\b\fs36 \cf0 Summary\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
 \ls4\ilvl0
-\f3\b0\fs26 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 .jsx
+\f3\b0\fs26 \cf0 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+.jsx
 \f1\fs24  is only a file extension convention.\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
-\ls4\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 You can write JSX inside 
+\ls4\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+You can write JSX inside 
 \f3\fs26 .js
 \f1\fs24  files.\
-\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 JSX is transpiled into 
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+JSX is transpiled into 
 \f3\fs26 React.createElement()
 \f1\fs24  calls.\
-\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 JSX is optional, but practically standard in modern React development.\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+JSX is optional, but practically standard in modern React development.\
 \pard\tx566\pardeftab720\sa240\partightenfactor0
 \cf0 \
 NOTE : 
-\f3\fs26 \strokec2 className
-\f1\fs24 \strokec2  is used instead of 
-\f3\fs26 \strokec2 class\
+\f3\fs26 className
+\f1\fs24  is used instead of 
+\f3\fs26 class\
 \pard\pardeftab720\partightenfactor0
 
-\f1\fs24 \cf0 \strokec2 This JSX:\
+\f1\fs24 \cf0 This JSX:\
 <div className="container" />\
 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \outl0\strokewidth0 This JS: \outl0\strokewidth0 \strokec2 \
-\pard\pardeftab720\partightenfactor0
-\cf0 React.createElement("div", \{ className: "container" \});\
+This JS: \
+React.createElement("div", \{ className: "container" \});\
 \
 \
 
@@ -184,7 +192,7 @@ NOTE :
 \clvertalc \clshdrawnil \clwWidth1404\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
 \pard\intbl\itap1\pardeftab720\qc\partightenfactor0
 
-\f2\b \cf0 \strokec2 HTML\cell 
+\f2\b \cf0 HTML\cell 
 \pard\intbl\itap1\pardeftab720\qc\partightenfactor0
 \cf0 React (JSX)\cell \row
 
@@ -224,7 +232,7 @@ NOTE :
 \f3\fs26 \cf0 onClick
 \f1\fs24 \cell \lastrow\row
 \pard\pardeftab720\partightenfactor0
-\cf0 \strokec2 \
+\cf0 \
 For Instance\
 <label htmlFor="email">Email</label>\
 \

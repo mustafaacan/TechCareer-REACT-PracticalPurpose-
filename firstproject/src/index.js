@@ -5,6 +5,8 @@ import App from "./App";
 import ComponentExample from "./components/classComponentExample.jsx";
 import FunctionComponentExample from "./components/functionComponentExample.jsx";
 import reportWebVitals from "./reportWebVitals";
+import RouterBlog from "./RouterBlog.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,6 +28,15 @@ const funccomponentRoot = ReactDOM.createRoot(
 funccomponentRoot.render(
   <React.StrictMode>
     <FunctionComponentExample />
+  </React.StrictMode>,
+);
+
+const routerRoot = ReactDOM.createRoot(document.getElementById("router"));
+routerRoot.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <RouterBlog />
+    </BrowserRouter>
   </React.StrictMode>,
 );
 
