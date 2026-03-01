@@ -8,10 +8,12 @@ export default function RouterBlog() {
   return (
     <React.Fragment>
       <div className='container'>
-        <h2 className=''>Router Area For Tests </h2>
-        <code> '/' -- routes to header function</code>
+        <div className='d-flex flex-column justify-content-center '>
+        <h2 className='text-center'>Router Area For Tests </h2>
+        <code className='text-center'> 'URL or URL/' -- routes to header function</code>
         <br />
-        <code> '/index' -- routes to main function </code>
+        <code className='text-center'> 'URL/index' -- routes to main function </code>
+        </div>
         <Routes>
           <Route path={'/'} element={<HeaderFunction />} />
           <Route path={'/index'} element={<MainFunction />}/>
