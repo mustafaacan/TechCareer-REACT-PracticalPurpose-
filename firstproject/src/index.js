@@ -7,6 +7,7 @@ import FunctionComponentExample from "./components/functionComponentExample.jsx"
 import reportWebVitals from "./reportWebVitals";
 import RouterBlog from "./RouterBlog.jsx";
 import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "./ThemeContext.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -35,7 +36,10 @@ const routerRoot = ReactDOM.createRoot(document.getElementById("router"));
 routerRoot.render(
   <React.StrictMode>
     <BrowserRouter>
-      <RouterBlog />
+      {/* Content API for Theme from ThemeContext */}
+      <ThemeProvider>
+        <RouterBlog />
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );

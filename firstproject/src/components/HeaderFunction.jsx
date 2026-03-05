@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "../style.css"
+import { ThemeContext } from '../ThemeContext'
 
 export default function HeaderFunction() {
+
+  const {theme, toggleTheme} = useContext(ThemeContext)
+  const buttonText = theme === "light" ? "🌙  Dark Mode" : "☀️  Light Mode"
+  const styles = {
+    light:{backgroundColor:"white",color:"black"},
+    dark:{backgroundColor:"black",color:"white"},
+  }
+
+ 
+
     {/* STYLING 2ND OPTION --> INTERNAL CSS */}
     const headerCss = {
       color: "red",
@@ -16,6 +27,14 @@ export default function HeaderFunction() {
             <div className="card shadow-md">
               <div className="card-body text-center">
                 <h2 className="card-title mb-3">Header Function from Router</h2>
+                {/* Theme Ops with Context */}
+                <button type='button' onClick={toggleTheme} className='btn btn-outline-info d-block m-3 w-50 mx-auto' style={{'maxWidth':'300px'}}> {buttonText} </button>
+                <div style={styles[theme]}>
+                  <h4> Theme Ops</h4>
+                    <p>
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam velit minima commodi! Natus reprehenderit rem sint perspiciatis rerum, esse facilis beatae consequatur sapiente, architecto sequi, quaerat iusto quas ex.</span><span>Quisquam omnis animi ducimus voluptatibus. Ex numquam rerum labore quam, cum vero. Obcaecati quaerat temporibus, perspiciatis exercitationem aliquam a quisquam sit non, voluptatibus saepe quasi iure? Sunt dolore delectus deleniti?</span><span>Debitis, modi, magni autem commodi quis optio assumenda nobis recusandae eum aperiam sapiente atque aspernatur natus libero vel? Cumque, nam quos consectetur magni sapiente dolor veritatis delectus temporibus laborum esse.</span>
+                    </p>
+                  </div>
                 {/* STYLING 1ST OPTION --> INLINE CSS */}
                 <h4> INLINE CSS</h4>
                 <p style={{color:'blue'}}>
