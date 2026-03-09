@@ -9,6 +9,10 @@ import RouterBlog from "./RouterBlog.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./ThemeContext.js";
 
+// REDUX
+import { Provider } from "react-redux";
+import { store } from "./store";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -36,10 +40,13 @@ const routerRoot = ReactDOM.createRoot(document.getElementById("router"));
 routerRoot.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* Content API for Theme from ThemeContext */}
-      <ThemeProvider>
-        <RouterBlog />
-      </ThemeProvider>
+      {/* REDUX LOGIN*/}
+      <Provider store={store}>
+        {/* Content API for Theme from ThemeContext */}
+        <ThemeProvider>
+          <RouterBlog />
+        </ThemeProvider>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>,
 );

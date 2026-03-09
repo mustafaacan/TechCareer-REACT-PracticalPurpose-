@@ -27,6 +27,8 @@ export default function HeaderFunction() {
             <div className="card shadow-md">
               <div className="card-body text-center">
                 <h2 className="card-title mb-3">Header Function from Router</h2>
+                {/* LOGIN LINK TO ROUTE /login */}
+                <a className='btn btn-outline-info d-block m-3 w-50 mx-auto' style={{'maxWidth':'300px'}} href="/login" role="button">LOGIN</a>
                 {/* Theme Ops with Context */}
                 <button type='button' onClick={toggleTheme} className='btn btn-outline-info d-block m-3 w-50 mx-auto' style={{'maxWidth':'300px'}}> {buttonText} </button>
                 <div style={styles[theme]}>

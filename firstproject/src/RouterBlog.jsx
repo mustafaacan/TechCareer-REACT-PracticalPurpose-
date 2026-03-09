@@ -4,6 +4,9 @@ import MainFunction from './components/MainFunction'
 import { Navigate, Route, Routes } from "react-router-dom";
 import FooterFunction from './components/FooterFunction';
 
+// Redux Login
+import LoginForm from './LoginForm';
+
 export default function RouterBlog() {
   return (
     <React.Fragment>
@@ -17,6 +20,7 @@ export default function RouterBlog() {
         <Routes>
           <Route path={'/'} element={<HeaderFunction />} />
           <Route path={'/index'} element={<MainFunction />}/>
+          <Route path={"/login"} element={<LoginForm/>} />
           <Route path={'/*'} element={<Navigate to={'/'} />}/>
         </Routes>
       <FooterFunction name='Mustafa Can'/>
