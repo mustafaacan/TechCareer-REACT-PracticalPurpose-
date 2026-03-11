@@ -1,13 +1,22 @@
 // LOGIN
 
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "./authSlice";
 
 const LoginForm = () => {
-  const { username, setUsername } = useState("");
-  const { password, setPassword } = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setUsername("");
+      setPassword("");
+    }
+  }, [isAuthenticated]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // default username --> admin@gmail.com
@@ -28,26 +37,32 @@ const LoginForm = () => {
     >
       <h1>Login</h1>
       <p> For Admin please use admin@gmail.com and admin </p>
-      <div class="form-floating mb-3">
+      <div className="form-floating mb-3">
         <input
           required
           type="email"
           className="form-control"
           id="floatingInput"
           placeholder="name@example.com"
+          value={username}
           onChange={(e) => setUsername(e.target.value)}
         ></input>
-        <label for="floatingInput">Email address</label>
+        <label htmlFor="floatingInput">Email address</label>
       </div>
-      <div class="form-floating">
+      <div className="form-floating">
         <input
           required
           type="password"
-          class="form-control"
+          className="form-control"
           id="floatingPassword"
           placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <label for="floatingPassword">Password</label>
+        <label htmlFor="floatingPassword">Password</label>
+        <button type="Submit" className="btn btn-primary mt-3">
+          Login
+        </button>
       </div>
     </form>
   );
